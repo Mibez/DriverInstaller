@@ -12,6 +12,8 @@ namespace DriverInstall
 
         // <requestedExecutionLevel level="requireAdministrator" uiAccess="false" /> change this in application manifest
         // if you get "Access denied" error when trying to run the installer as administrator
+        
+        // In some cases, you may have to manually add a reference to the System.Management namespace
 
         public void DriverCheck(string driverName)
         {
