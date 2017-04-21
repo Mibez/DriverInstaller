@@ -1,0 +1,28 @@
+using DriverInstall;
+using System.Diagnostics;
+using System.Security.Principal;
+
+
+
+
+
+if (Properties.Settings.Default.FirstRun == true)
+            {
+                if (IsAdministrator() == false)
+                {
+                    // Restart program and run as admin
+                    var exeName = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+                    ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
+                    startInfo.Verb = "runas";
+                    System.Diagnostics.Process.Start(startInfo);
+                    Application.Current.Shutdown();
+                    return;
+                }
+                else
+                {
+
+                    dr.DriverCheck("DriverName");
+                    Properties.Settings.Default.FirstRun = false;
+                    Properties.Settings.Default.Save();
+                }
+            }
