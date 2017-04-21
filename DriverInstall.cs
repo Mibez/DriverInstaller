@@ -8,7 +8,7 @@ namespace DriverInstall
     {
         // A class to add to your project with which you can scan the system for a specific device- or system driver
         // and install it in case it's missing from the target computer.
-        // The prequisites are that you have a driver installer EXECUTABLE in the same folder as your app is located
+        // The prerequisites are that you have a driver installer EXECUTABLE in the same folder as your app is located
 
         // <requestedExecutionLevel level="requireAdministrator" uiAccess="false" /> change this in application manifest
         // if you get "Access denied" error when trying to run the installer as administrator
