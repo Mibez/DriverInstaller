@@ -4,7 +4,8 @@ using System.Security.Principal;
 
 
 
-
+// If the FirstRun if statement is used, you have to create a new property to the Properties.Settings file.
+// You can do this with the help of IntelliSense or manually by adding "internal bool FirstRun;" inside the sealed "Settings" class
 
 if (Properties.Settings.Default.FirstRun == true)
             {
@@ -20,8 +21,11 @@ if (Properties.Settings.Default.FirstRun == true)
                 }
                 else
                 {
-
+                    // check for the driver and install it if needed
+                    Driver dr = new Driver();
                     dr.DriverCheck("DriverName");
+                    
+                    
                     Properties.Settings.Default.FirstRun = false;
                     Properties.Settings.Default.Save();
                 }
